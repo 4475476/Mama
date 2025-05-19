@@ -1,0 +1,49 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.Cada{
+
+    font-weight: bolder;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 2%;
+}
+.batata{
+    background-color: rgb(4, 117, 255);
+    width: 110px;
+    height: 30px;
+    padding: 0;
+
+}
+.nome{
+width: 200px;
+height: 30px;
+}
+.Pass{
+    width: 200px;
+    height: 30px;
+}
+.ba{
+    align-items:center;
+    text-align: center;
+}
+.imgFundo{
+    background-image: url(a.png);
+    width: 1000px;
+    height: 1000px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex-direction: column;
+}
+.b{
+    margin-left: 1%;
+    align-items: center;
+    text-align: center;
+}
+.s{
+    background-color:deepskyblue;
+}

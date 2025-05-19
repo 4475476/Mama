@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sim</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+    <div class="imgFundo">
+
+        <h1 class="Cada">
+            <h1 class="Cada">Cadastre-se e ratazana
+            </h1>
+    </div>
+    <script>
+        document.getElementById('cep').addEventListener('blur', function () {
+            // Remove qualquer caractere que não seja número
+            const cep = this.value.replace(/\D/g, '');
+
+            // Verifica se o CEP tem 8 dígitos
+            if (cep.length === 8) {
+                // Faz a requisição para a API ViaCEP
+                fetch(`https://viacep.com.br/ws/${cep}/json/`)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (!data.erro) {
+                            // Formata o endereço
+                            const endereco = `${data.logradouro}, ${data.bairro}, ${data.localidade} - ${data.uf}`;
+                            document.getElementById('endereco').value = endereco;
+                        } else {
+                            alert('CEP não encontrado!');
+                            document.getElementById('endereco').value = '';
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Erro ao consultar CEP:', error);
+                        alert('Erro ao consultar CEP. Tente novamente.');
+                    });
+            } else {
+                alert('CEP deve conter 8 dígitos!');
+                document.getElementById('endereco').value = '';
+            }
+        });
+    </script>
+</body>
+
+</html>
