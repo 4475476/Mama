@@ -1,0 +1,109 @@
+create database AC1
+go
+
+use AC1
+go
+
+create table Clientes(
+ID_Cliente int primary key,
+Nome text,
+email text,
+Idade int
+)
+go
+
+alter table Clientes
+add Endereco varchar(100)
+
+go
+
+create table Produtos(
+ID_Produto int primary key,
+Nome text,
+Preco float
+)
+
+go
+
+alter table Produtos
+add Descrição varchar(255)
+
+go
+
+create table Ordens(
+ID_Ordem int primary key,
+ID_Client int,
+ID_Produto int,
+Quantidade int
+)
+
+go
+
+alter table Ordens
+add Data_Pedido date
+
+go
+
+alter table Clientes
+drop column Idade
+
+go
+
+create table Categorias(
+ID_Categoria int primary key,
+Nome text
+
+)
+
+go
+
+alter table Ordens
+add ID_categoria int 
+
+go
+
+create table Estoque(
+ID_Produto int primary key,
+Quantidade int
+
+)
+
+go
+
+alter table Clientes
+add Data_Cadastro datetime
+
+go
+
+create table Fornecedores(
+ID_Fornecedor int primary key,
+Nome text,
+Telefone text
+)
+alter table Produtos
+add ID_Fornecedor int
+
+go
+
+create table Detalhes_Pedido(
+ID_Detalhe int primary key,
+ID_Pedido int,
+ID_Produto int,
+Quantidade int
+)
+
+go
+
+alter table Detalhes_Pedido
+drop column ID_Produto
+
+go
+
+alter table Produtos
+alter column Preco money
+
+go
+
+drop table Categorias
+
+go
