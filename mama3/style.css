@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.imgFundo{
+background: url(transferir.jfif) no-repeat bottom / cover;
+    width: 1280px;
+    height: 1024px;
+}
+.ba{
+    background-color: black;
+    align-items: center;
+    text-align: center;
+}
